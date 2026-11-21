@@ -1,0 +1,24 @@
+name: Check static tracker
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check JavaScript syntax
+        run: node --check app.js
+      - name: Check page files and icons
+        shell: bash
+        run: |
+          test -f index.html
+          test -f style.css
+          test -f app.js
+          test -f favicon.svg
+          test -f icons/royal-jelly.svg
+          for route in small med night extreme winter spirit; do
+            test -f "$route/index.html"
+          done
