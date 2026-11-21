@@ -143,7 +143,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #2c93
 .memory-tile.tile-matched{background:#deefce;border-color:#61a053}
 .tile-number{position:absolute;left:6px;top:3px;font-size:11px;font-weight:800;color:#80602e}
 .tile-question{font-size:clamp(30px,5vw,57px);line-height:1;color:#ae771c;font-family:Georgia,serif;font-weight:bold;text-shadow:0 2px #fff1bd}
-.tile-reward-image{width:min(60%,75px);height:56%;object-fit:contain;min-width:0}
+.tile-reward-image{width:min(68%,82px);height:62%;object-fit:contain;min-width:0;display:block}
 .tile-reward-name{font-weight:700;line-height:1.14;font-size:clamp(9px,1.2vw,12px);color:#514c3e;text-align:center;overflow-wrap:anywhere}
 .tile-check{position:absolute;right:3px;top:2px;color:#24763e;font-size:13px;font-weight:bold}
 .btn{border:1px solid #aeb8c1;border-radius:3px;background:linear-gradient(#fff,#edf0f3);color:#414c56;min-height:32px;padding:6px 11px;font-size:12px;font-weight:bold}
@@ -158,15 +158,15 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #2c93
 .selected-preview{display:flex;align-items:center;gap:9px;min-height:66px;background:#f9f9f3;border:1px solid #e1dec8;padding:8px;margin-bottom:12px}
 .selected-preview strong{display:block;font-size:12px;color:#42494e}
 .selected-preview span{font-size:11px;color:#7a7e83}
-.preview-image{width:47px;height:47px;object-fit:contain}
+.preview-image{width:58px;height:58px;object-fit:contain;display:block}
 .no-preview{font-style:italic}
 .input-label{display:block;font-size:11px;font-weight:700;color:#616a73;margin:12px 0 5px}
 .reward-editor input{width:100%;padding:9px 10px;border-radius:2px;border:1px solid #aab7c2;background:#fff;color:#30343a;font-size:12px;min-width:0}
 .reward-editor input:focus{outline:2px solid #92b7d2;border-color:#4488b7}
-.reward-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;max-height:290px;overflow-y:auto;padding:4px 1px 2px 0;margin:10px 0 17px}
-.reward-choice{appearance:none;background:#fff;border:1px solid #c7d0d9;border-radius:3px;min-height:75px;color:#444b54;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:5px 4px;font-size:10px;line-height:1.15;overflow-wrap:anywhere}
+.reward-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:390px;overflow-y:auto;padding:4px 1px 2px 0;margin:10px 0 17px}
+ .reward-choice{appearance:none;background:#fff;border:1px solid #c7d0d9;border-radius:5px;min-height:116px;color:#444b54;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:8px 6px;font-size:12px;line-height:1.15;overflow-wrap:anywhere}
 .reward-choice:hover,.reward-choice.chosen{background:#f0f7e9;border-color:#70a553}
-.choice-image{height:39px;width:39px;object-fit:contain}
+.choice-image{height:64px;width:64px;max-width:100%;object-fit:contain;display:block;flex:0 0 64px}
 .custom-reward-row{display:flex;gap:4px}
 .custom-reward-row input{flex:1;width:0}
 .editor-buttons{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}
@@ -174,7 +174,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #2c93
 .empty-choice{padding:18px 6px;color:#7f8690;font-size:12px;grid-column:1/-1}
 .known-pairs{display:grid;gap:8px}
 .pair-row{display:flex;align-items:center;gap:12px;background:#f5faef;border:1px solid #bcd4a3;padding:9px 12px}
-.pair-icon{height:39px;width:39px;object-fit:contain}
+.pair-icon{height:48px;width:48px;object-fit:contain;display:block}
 .pair-row>div{flex:1;min-width:0}
 .pair-row strong{display:block;color:#3f5634;font-size:13px}
 .pair-row small{display:block;color:#7b8873;font-size:11px}
@@ -253,3 +253,9 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #2c93
  html{scroll-behavior:auto}
  .memory-tile{transition:none}
 }
+
+/* Show the actual transparent item artwork at a readable size. */
+.reward-choice img,.memory-tile img,.selected-preview img,.pair-row img{color:transparent;font-size:0;line-height:0}
+.reward-choice{box-shadow:0 1px 0 #e3e7ed}
+.reward-choice.chosen{box-shadow:inset 0 0 0 2px #8bad77}
+@media(max-width:390px){.choice-image{height:56px;width:56px;flex-basis:56px}.reward-choice{min-height:104px}}
