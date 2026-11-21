@@ -33,3 +33,19 @@ jobs:
           file /tmp/star-jelly.png | grep -q 'PNG image'
           file /tmp/ticket.png | grep -q 'PNG image'
           file /tmp/stinger.webp | grep -q 'Web/P image'
+
+      - name: Verify browser-friendly item image CDN
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/bss-icons
+          for item in "gumdrops.png" "moon charm.png" "honeysuckle.png" "magic bean.png" "micro-converter.png" "field dice.png"; do
+            url="https://cdn.jsdelivr.net/gh/FaethyvveIcye/bss@main/images/items/${item// /%20}"
+            echo "Checking item: $item"
+            curl --retry 2 --fail --location --silent --show-error --max-time 30 "$url" --output "/tmp/bss-icons/$item"
+            file "/tmp/bss-icons/$item"
+            file --mime-type "/tmp/bss-icons/$item" | grep -q 'image/png'
+          done
+          curl --retry 2 --fail --location --silent --show-error --max-time 30 'https://cdn.jsdelivr.net/gh/IamDanteDev/Bee-Swarm-Simulator-Remake@main/assets/Icons/bss/Stinger.webp' --output /tmp/bss-icons/stinger.webp
+          file /tmp/bss-icons/stinger.webp
+          file --mime-type /tmp/bss-icons/stinger.webp | grep -q 'image/webp'
