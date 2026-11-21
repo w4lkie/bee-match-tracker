@@ -82,7 +82,7 @@ function masthead() {
  '<nav class="wiki-topnav" aria-label="Main navigation"><div class="topnav-links"><a class="'+(route==="home"?"current":"")+'" href="'+root+'">Main Page</a><a class="'+(route!=="home"?"current":"")+'" href="'+root+'small/">Memory Matches</a><a href="'+root+'#how-it-works">How to Use</a><a href="'+wikiBase+'Items" target="_blank" rel="noopener noreferrer">Items Wiki ↗</a></div><div class="nav-tag">FAN TOOL • NO ROBLOX CONNECTION</div></nav>';
 }
 function footer(){
- return '<footer class="wiki-footer"><span>Bee Match Tracker is an independent, fan-made site. Game names and artwork belong to their respective owners.</span><span>Game item images and wiki background: <a href="'+wikiBase+'Bee_Swarm_Simulator_Wiki" target="_blank" rel="noopener noreferrer">BSS Community Wiki ↗</a></span></footer>';
+ return '<footer class="wiki-footer"><span>Bee Match Tracker is an independent, fan-made site. Game names and artwork belong to their respective owners.</span><span>Item image sources: <a href="https://github.com/FaethyvveIcye/bss/tree/main/images/items" target="_blank" rel="noopener noreferrer">BSS item PNG archive ↗</a> · <a href="https://github.com/IamDanteDev/Bee-Swarm-Simulator-Remake/tree/main/assets/Icons/bss" target="_blank" rel="noopener noreferrer">Additional game art ↗</a> · <a href="'+wikiBase+'Bee_Swarm_Simulator_Wiki" target="_blank" rel="noopener noreferrer">BSS Wiki ↗</a></span></footer>';
 }
 function page(main,right) {
  document.getElementById("app").innerHTML=masthead()+'<div class="wiki-layout">'+sidebar()+'<main id="main-content" class="wiki-article">'+main+'</main><aside class="right-sidebar" aria-label="Details and tools">'+right+'</aside></div>'+footer();
