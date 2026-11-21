@@ -22,3 +22,14 @@ jobs:
           for route in small med night extreme winter spirit; do
             test -f "$route/index.html"
           done
+      - name: Verify common in-game item images load
+        shell: bash
+        run: |
+          curl --retry 2 --fail --location --silent --show-error "https://raw.githubusercontent.com/FaethyvveIcye/bss/main/images/items/royal%20jelly.png" --output /tmp/royal-jelly.png
+          curl --retry 2 --fail --location --silent --show-error "https://raw.githubusercontent.com/FaethyvveIcye/bss/main/images/items/star%20jelly.png" --output /tmp/star-jelly.png
+          curl --retry 2 --fail --location --silent --show-error "https://raw.githubusercontent.com/FaethyvveIcye/bss/main/images/items/ticket.png" --output /tmp/ticket.png
+          curl --retry 2 --fail --location --silent --show-error "https://raw.githubusercontent.com/IamDanteDev/Bee-Swarm-Simulator-Remake/main/assets/Icons/bss/Stinger.webp" --output /tmp/stinger.webp
+          file /tmp/royal-jelly.png | grep -q 'PNG image'
+          file /tmp/star-jelly.png | grep -q 'PNG image'
+          file /tmp/ticket.png | grep -q 'PNG image'
+          file /tmp/stinger.webp | grep -q 'Web/P image'
