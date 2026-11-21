@@ -35,7 +35,7 @@ A wiki-inspired, independently developed Bee Swarm Simulator Memory Match tracke
 5. **Reward tools:** Kept manual reward selection and pair-tracking; redesigned the picker as a catalog of item tiles.
 6. **Visual system:** Added the honey/field banner treatment, wiki-blue links, light-gray panels, pale-yellow accents, tabbed article headings, borders, and data tables.
 7. **Mobile styling:** Added responsive breakpoints for phones and tablets. The reward selector stacks beneath the article on narrow screens.
-8. **Assets & publishing:** Uses item image redirects from the Bee Swarm Simulator Fandom Wiki when available, falls back to local illustration SVGs, and publishes as plain HTML/CSS/JS to GitHub Pages.
+8. **Assets & publishing:** Uses Bee Swarm Simulator's actual in-game item artwork sourced from publicly available asset collections, with local illustration SVGs as fallbacks, and publishes as plain HTML/CSS/JS to GitHub Pages.
 
 ## Local testing
 
@@ -56,6 +56,19 @@ node --check app.js
 ## Deployment
 
 GitHub repository **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root)**. Changes on `main` are deployed by GitHub Pages when configured.
+
+
+## In-game item icon sources
+
+The reward picker and matched tiles use the **actual Bee Swarm Simulator item artwork**, rather than generated emoji illustrations. Image filenames were matched against available files in these public GitHub repositories:
+
+- [BSS item PNG archive](https://github.com/FaethyvveIcye/bss/tree/main/images/items) — 37 item types including Royal Jelly, Tickets, Star Jelly, fruits, waxes, extracts, etc.
+- [BSS Remake game icon archive](https://github.com/IamDanteDev/Bee-Swarm-Simulator-Remake/tree/main/assets/Icons/bss) — Stinger and Present icons.
+- [Bee Swarm Simulator Wiki](https://bee-swarm-simulator.fandom.com/wiki/Sticker) — Sideways Spirit Bear Sticker artwork, using the wiki file redirect (not independently verified to load).
+
+These are **third-party asset collections**, not official licensed redistribution channels. Items are generally protected by copyright even when shared by community projects; art ownership and permissions have not been independently confirmed. Images are linked from the upstream sources rather than copied into this repository. If an image is blocked or unavailable, the site uses its previous local illustration for that item. The site remains an independent, noncommercial fan project.
+
+Rewards with quantities (e.g. “3 Royal Jellies” and “200 Blueberries”) now normalize to the correct item artwork.
 
 ## Attribution and limits
 
