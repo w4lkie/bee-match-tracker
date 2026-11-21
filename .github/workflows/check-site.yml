@@ -49,3 +49,29 @@ jobs:
           curl --retry 2 --fail --location --silent --show-error --max-time 30 'https://cdn.jsdelivr.net/gh/IamDanteDev/Bee-Swarm-Simulator-Remake@main/assets/Icons/bss/Stinger.webp' --output /tmp/bss-icons/stinger.webp
           file /tmp/bss-icons/stinger.webp
           file --mime-type /tmp/bss-icons/stinger.webp | grep -q 'image/webp'
+
+      - name: Verify replacement artwork is real square icons
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/real-bss-icons
+          files=(
+            'Gumdrops.webp'
+            'Moon_Charm.webp'
+            'Field_Dice.webp'
+            'Enzymes.webp'
+            'Star_Jelly.webp'
+          )
+          for image in "${files[@]}"; do
+            curl --retry 2 --fail --location --silent --show-error --max-time 30 "https://cdn.jsdelivr.net/gh/BSS-AI/BSS-AI@main/GUI/public/assets/${image}" -o "/tmp/real-bss-icons/$image"
+            file "/tmp/real-bss-icons/$image"
+            file --mime-type "/tmp/real-bss-icons/$image" | grep -q 'image/webp'
+          done
+          for image in 'Magic_Bean.webp' 'Micro-Converter.webp' 'Jelly_Beans.webp'; do
+            curl --retry 2 --fail --location --silent --show-error --max-time 30 "https://cdn.jsdelivr.net/gh/IamDanteDev/Bee-Swarm-Simulator-Remake@main/assets/Icons/bss/${image}" -o "/tmp/real-bss-icons/$image"
+            file "/tmp/real-bss-icons/$image"
+            file --mime-type "/tmp/real-bss-icons/$image" | grep -q 'image/webp'
+          done
+          curl --retry 2 --fail --location --silent --show-error --max-time 30 "https://cdn.jsdelivr.net/gh/m4thcreator/BSSTrades@main/imageslibrary/services/Night_Bell.webp" -o "/tmp/real-bss-icons/Night_Bell.webp"
+          file /tmp/real-bss-icons/Night_Bell.webp
+          file --mime-type /tmp/real-bss-icons/Night_Bell.webp | grep -q 'image/webp'
