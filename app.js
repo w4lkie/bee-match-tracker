@@ -1,7 +1,7 @@
 
 const MODES={"small":["Regular Memory Match","25,000 Honey","2 hours",16,"🍯","In front of the Pro Shop","1 Royal Jelly|1 Ticket|15 Sunflower Seeds|15 Pineapples|15 Blueberries|15 Strawberries|15 Treats|1 Jelly Beans|5 Gumdrops|5 Moon Charms|3 Honeysuckles|1 Magic Bean|1 Micro-Converter|1 Field Dice|5 Tickets|1 Oil|1 Enzymes|1 Glitter"],"med":["Mega Memory Match","500,000 Honey","4 hours",16,"🏆","Inside the Badge Bearer's Guild","3 Royal Jellies|3 Tickets|2 Micro-Converters|2 Field Dice|10 Gumdrops|1 Jelly Beans|1 Magic Bean|25 Sunflower Seeds|25 Pineapples|10 Moon Charms|5 Honeysuckles|50 Treats|25 Blueberries|25 Strawberries|1 Oil|1 Enzymes|1 Glitter|1 Star Jelly"],"night":["Night Memory Match","5,000,000 Honey","8 hours",16,"🌙","Near Bubble Bee Man","25 Moon Charms|1 Magic Bean|1 Glitter|1 Oil|1 Enzymes|3 Micro-Converters|1 Star Jelly|5 Stingers|5 Tickets|500 Treats|5 Honeysuckles|3 Field Dice|1 Night Bell|1 Star Treat"],"extreme":["Extreme Memory Match","25,000,000 Honey","8 hours",20,"🔥","Near the Pepper Patch","1 Star Jelly|25 Royal Jellies|5 Tickets|1 Magic Bean|3 Oils|3 Enzymes|3 Red Extracts|3 Blue Extracts|1 Tropical Drink|1 Glitter|25 Gumdrops|3 Micro-Converters|3 Jelly Beans|200 Sunflower Seeds|200 Blueberries|200 Strawberries|200 Pineapples|10 Honeysuckles|1 Cloud Vial|5 Coconuts|5 Stingers|2,500 Treats|15 Tickets|5 Glitter|1 Gold Egg|3 Star Jellies|1 Sideways Spirit Bear Sticker|1 Diamond Egg|1 Star Treat"],"winter":["Winter Memory Match","100 Snowflakes","4 hours",20,"❄️","Beesmas seasonal match","1 Gingerbread Bear|3 Jelly Beans|5 Micro-Converters|5 Field Dice|1 Magic Bean|1 Glitter|15 Honeysuckles|1 Star Jelly|3 Oils|3 Soft Waxes|3 Enzymes|10 Tickets|100 Gumdrops|3 Tropical Drinks|1 Hard Wax|1 Smooth Dice|1 Swirled Wax|1 Gold Egg|1 Night Bell|1 Silver Egg|1 Diamond Egg|1 Super Smoothie|1 Mythic Egg|1 Festive Bean|1 Star Treat"],"spirit":["Spirit Bear Quest Match","Free (quest reward)","Quest only",16,"🌸","During certain Spirit Bear quests","10 Royal Jellies|1 Glitter|150 Sunflower Seeds|150 Pineapples|150 Strawberries|150 Blueberries|25 Moon Charms|25 Gumdrops|5 Jelly Beans|3 Magic Beans|1,000 Treats|2 Oils|2 Enzymes"]};
 const ICONS=[["royal-jelly","Royal Jelly"],["star-jelly","Star Jelly"],["jelly-bean","Jelly Bean"],["ticket","Ticket"],["moon-charm","Moon Charm"],["gingerbread-bear","Gingerbread Bear"],["star-treat","Star Treat"],["treat","Treat"],["gold-egg","Gold Egg"],["silver-egg","Silver Egg"],["diamond-egg","Diamond Egg"],["mythic-egg","Mythic Egg"],["sunflower-seed","Sunflower Seed"],["pineapple","Pineapple"],["blueberry","Blueberry"],["strawberry","Strawberry"],["gumdrop","Gumdrop"],["magic-bean","Magic Bean"],["glitter","Glitter"],["night-bell","Night Bell"],["oil","Oil"],["enzyme","Enzyme"],["field-dice","Field Dice"],["smooth-dice","Smooth Dice"],["micro-converter","Micro-Converter"],["honeysuckle","Honeysuckle"],["coconut","Coconut"],["red-extract","Red Extract"],["blue-extract","Blue Extract"],["soft-wax","Soft Wax"],["hard-wax","Hard Wax"],["swirled-wax","Swirled Wax"],["cloud-vial","Cloud Vial"],["tropical-drink","Tropical Drink"],["stinger","Stinger"],["snowflake","Snowflake"],["sticker","Sticker"],["festive-bean","Festive Bean"],["super-smoothie","Super Smoothie"],["gift","Gift"]];
-const WIKI_FILES={"Royal Jelly":"Royal_Jelly.png","Star Jelly":"Star_Jelly.png","Jelly Bean":"Jelly_Bean.png","Ticket":"Ticket.png","Moon Charm":"Moon_Charm.png","Gingerbread Bear":"Gingerbread_Bear.png","Star Treat":"Star_Treat.png","Treat":"Treat.png","Gold Egg":"Gold_Egg.png","Silver Egg":"Silver_Egg.png","Diamond Egg":"Diamond_Egg.png","Mythic Egg":"Mythic_Egg.png","Sunflower Seed":"Sunflower_Seed.png","Pineapple":"Pineapple.png","Blueberry":"Blueberry.png","Strawberry":"Strawberry.png","Gumdrop":"Gumdrop.png","Magic Bean":"Magic_Bean.png","Glitter":"Glitter.png","Night Bell":"Night_Bell.png","Oil":"Oil.png","Enzyme":"Enzymes.png","Field Dice":"Field_Dice.png","Smooth Dice":"Smooth_Dice.png","Micro-Converter":"Micro-Converter.png","Honeysuckle":"Honeysuckle.png","Coconut":"Coconut.png","Red Extract":"Red_Extract.png","Blue Extract":"Blue_Extract.png","Soft Wax":"Soft_Wax.png","Hard Wax":"Hard_Wax.png","Swirled Wax":"Swirled_Wax.png","Cloud Vial":"Cloud_Vial.png","Tropical Drink":"Tropical_Drink.png","Stinger":"Stinger.png","Snowflake":"Snowflake.png","Sticker":"Sticker.png","Festive Bean":"Festive_Bean.png","Super Smoothie":"Super_Smoothie.png","Gift":"Present.png"};
+const GAME_ICON_FILES={"royal jelly":"royal jelly.png","star jelly":"star jelly.png","jelly bean":"jelly beans.png","ticket":"ticket.png","moon charm":"moon charm.png","gingerbread bear":"gingerbread bear.png","star treat":"star treat.png","treat":"treat.png","gold egg":"gold egg.png","silver egg":"silver egg.png","diamond egg":"diamond egg.png","mythic egg":"mythic egg.png","sunflower seed":"sunflower seed.png","pineapple":"pineapple.png","blueberry":"blueberry.png","strawberry":"strawberry.png","gumdrop":"gumdrops.png","magic bean":"magic bean.png","glitter":"glitter.png","night bell":"night bell.png","oil":"oil.png","enzyme":"enzymes.png","field dice":"field dice.png","smooth dice":"smooth dice.png","micro-converter":"micro-converter.png","honeysuckle":"honeysuckle.png","coconut":"coconut.png","red extract":"red extract.png","blue extract":"blue extract.png","soft wax":"soft wax.png","hard wax":"hard wax.png","swirled wax":"swirled wax.png","cloud vial":"cloud vial.png","tropical drink":"tropical drink.png","snowflake":"snowflake.png","festive bean":"festive bean.png","super smoothie":"super smoothie.png"};
 
 const route = document.body.dataset.mode || "home";
 const root = document.body.dataset.root || "./";
@@ -20,19 +20,38 @@ const shortNames={small:"Regular",med:"Mega",night:"Night",extreme:"Extreme",win
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 }
+
+const GAME_IMAGE_BASE="https://raw.githubusercontent.com/FaethyvveIcye/bss/main/images/items/";
+const EXTRA_GAME_IMAGES={
+ "stinger":"https://raw.githubusercontent.com/IamDanteDev/Bee-Swarm-Simulator-Remake/main/assets/Icons/bss/Stinger.webp",
+ "sideways spirit bear sticker":"https://bee-swarm-simulator.fandom.com/wiki/Special:Redirect/file/Hivesticker_sideways_spirit_bear.png",
+ "gift":"https://raw.githubusercontent.com/IamDanteDev/Bee-Swarm-Simulator-Remake/main/assets/Icons/bss/Present.webp"
+};
+function rewardKey(name) {
+  return String(name).toLowerCase().trim()
+   .replace(/^[\d,.\s×x]+/g,"")
+   .replace(/\bjellies$/,"jelly")
+   .replace(/berries$/,"berry")
+   .replace(/waxes$/,"wax")
+   .replace(/s$/,"")
+   .trim();
+}
 function localIcon(name) {
-  const key=String(name).toLowerCase();
-  const found=[...ICONS].sort((a,b)=>b[1].length-a[1].length).find(x=>key.includes(x[1].toLowerCase()));
+  const key=rewardKey(name);
+  const found=[...ICONS].sort((a,b)=>b[1].length-a[1].length)
+    .find(x=>rewardKey(x[1])===key);
   return root+"icons/"+(found?found[0]:"gift")+".svg";
 }
-function wikiIcon(name) {
-  const key=String(name).toLowerCase();
-  const matched=Object.keys(WIKI_FILES).sort((a,b)=>b.length-a.length).find(x=>key.includes(x.toLowerCase()));
-  return matched?wikiBase+"Special:Redirect/file/"+encodeURIComponent(WIKI_FILES[matched]):null;
+function gameIcon(name) {
+  const key=rewardKey(name);
+  if(GAME_ICON_FILES[key])return GAME_IMAGE_BASE+encodeURIComponent(GAME_ICON_FILES[key]);
+  if(EXTRA_GAME_IMAGES[key])return EXTRA_GAME_IMAGES[key];
+  return null;
 }
 function img(name,cls="item-image") {
   const fallback=localIcon(name);
-  return '<img class="'+escapeHtml(cls)+'" src="'+escapeHtml(wikiIcon(name)||fallback)+'" data-fallback="'+escapeHtml(fallback)+'" alt="'+escapeHtml(name)+'" loading="lazy" referrerpolicy="no-referrer">';
+  const imageUrl=gameIcon(name)||fallback;
+  return '<img class="'+escapeHtml(cls)+'" src="'+escapeHtml(imageUrl)+'" data-fallback="'+escapeHtml(fallback)+'" alt="'+escapeHtml(name)+'" loading="lazy" referrerpolicy="no-referrer">';
 }
 document.addEventListener("error",event=>{
   const el=event.target;
@@ -41,6 +60,7 @@ document.addEventListener("error",event=>{
     el.src=el.dataset.fallback;
   }
 },true);
+
 function modeLink(id,extra="") {
   return '<a href="'+root+id+'/" class="'+extra+' '+(route===id?"is-active":"")+'"><span class="nav-icon">'+MODES[id][4]+'</span><span>'+shortNames[id]+'</span></a>';
 }
@@ -62,7 +82,7 @@ function masthead() {
  '<nav class="wiki-topnav" aria-label="Main navigation"><div class="topnav-links"><a class="'+(route==="home"?"current":"")+'" href="'+root+'">Main Page</a><a class="'+(route!=="home"?"current":"")+'" href="'+root+'small/">Memory Matches</a><a href="'+root+'#how-it-works">How to Use</a><a href="'+wikiBase+'Items" target="_blank" rel="noopener noreferrer">Items Wiki ↗</a></div><div class="nav-tag">FAN TOOL • NO ROBLOX CONNECTION</div></nav>';
 }
 function footer(){
- return '<footer class="wiki-footer"><span>Bee Match Tracker is an independent, fan-made site. Game names and artwork belong to their respective owners.</span><span>Wiki item images and background: <a href="'+wikiBase+'Bee_Swarm_Simulator_Wiki" target="_blank" rel="noopener noreferrer">BSS Community Wiki ↗</a></span></footer>';
+ return '<footer class="wiki-footer"><span>Bee Match Tracker is an independent, fan-made site. Game names and artwork belong to their respective owners.</span><span>Game item images and wiki background: <a href="'+wikiBase+'Bee_Swarm_Simulator_Wiki" target="_blank" rel="noopener noreferrer">BSS Community Wiki ↗</a></span></footer>';
 }
 function page(main,right) {
  document.getElementById("app").innerHTML=masthead()+'<div class="wiki-layout">'+sidebar()+'<main id="main-content" class="wiki-article">'+main+'</main><aside class="right-sidebar" aria-label="Details and tools">'+right+'</aside></div>'+footer();
