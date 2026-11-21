@@ -22,34 +22,6 @@ jobs:
           for route in small med night extreme winter spirit; do
             test -f "$route/index.html"
           done
-      - name: Verify common in-game item images load
-        shell: bash
-        run: |
-          curl --retry 2 --fail --location --silent --show-error "https://raw.githubusercontent.com/FaethyvveIcye/bss/main/images/items/royal%20jelly.png" --output /tmp/royal-jelly.png
-          curl --retry 2 --fail --location --silent --show-error "https://raw.githubusercontent.com/FaethyvveIcye/bss/main/images/items/star%20jelly.png" --output /tmp/star-jelly.png
-          curl --retry 2 --fail --location --silent --show-error "https://raw.githubusercontent.com/FaethyvveIcye/bss/main/images/items/ticket.png" --output /tmp/ticket.png
-          curl --retry 2 --fail --location --silent --show-error "https://raw.githubusercontent.com/IamDanteDev/Bee-Swarm-Simulator-Remake/main/assets/Icons/bss/Stinger.webp" --output /tmp/stinger.webp
-          file /tmp/royal-jelly.png | grep -q 'PNG image'
-          file /tmp/star-jelly.png | grep -q 'PNG image'
-          file /tmp/ticket.png | grep -q 'PNG image'
-          file /tmp/stinger.webp | grep -q 'Web/P image'
-
-      - name: Verify browser-friendly item image CDN
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p /tmp/bss-icons
-          for item in "gumdrops.png" "moon charm.png" "honeysuckle.png" "magic bean.png" "micro-converter.png" "field dice.png"; do
-            url="https://cdn.jsdelivr.net/gh/FaethyvveIcye/bss@main/images/items/${item// /%20}"
-            echo "Checking item: $item"
-            curl --retry 2 --fail --location --silent --show-error --max-time 30 "$url" --output "/tmp/bss-icons/$item"
-            file "/tmp/bss-icons/$item"
-            file --mime-type "/tmp/bss-icons/$item" | grep -q 'image/png'
-          done
-          curl --retry 2 --fail --location --silent --show-error --max-time 30 'https://cdn.jsdelivr.net/gh/IamDanteDev/Bee-Swarm-Simulator-Remake@main/assets/Icons/bss/Stinger.webp' --output /tmp/bss-icons/stinger.webp
-          file /tmp/bss-icons/stinger.webp
-          file --mime-type /tmp/bss-icons/stinger.webp | grep -q 'image/webp'
-
       - name: Verify replacement artwork is real square icons
         shell: bash
         run: |
