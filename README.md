@@ -58,18 +58,21 @@ node --check app.js
 GitHub repository **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root)**. Changes on `main` are deployed by GitHub Pages when configured.
 
 
-## In-game item icon sources
+## Real icon artwork and fallback chain
 
-The reward picker and matched tiles use the **actual Bee Swarm Simulator item artwork**, rather than generated emoji illustrations. Image filenames were matched against available files in these public GitHub repositories:
+The icons shown in the Memory Match reward picker, boards, selected-tile panel, and matching-pair list are **square game-item illustrations**, served from the following public image collections:
 
-- [BSS item PNG archive](https://github.com/FaethyvveIcye/bss/tree/main/images/items) — 37 item types including Royal Jelly, Tickets, Star Jelly, fruits, waxes, extracts, etc.
-- [BSS Remake game icon archive](https://github.com/IamDanteDev/Bee-Swarm-Simulator-Remake/tree/main/assets/Icons/bss) — Stinger and Present icons.
-- [Bee Swarm Simulator Wiki](https://bee-swarm-simulator.fandom.com/wiki/Sticker) — Sideways Spirit Bear Sticker artwork, using the wiki file redirect (not independently verified to load).
+- [BSS-AI WebP game assets](https://github.com/BSS-AI/BSS-AI/tree/main/GUI/public/assets) — 64×64 Royal Jelly, Star Jelly, Tickets, Gumdrops, Moon Charm, eggs, fruits, extracts, waxes, and more.
+- [Bee Swarm Simulator Remake art](https://github.com/IamDanteDev/Bee-Swarm-Simulator-Remake/tree/main/assets/Icons/bss) — Magic Bean, Micro-Converter, Jelly Beans, Stinger, Cloud Vial and other items.
+- [BSSTrades artwork](https://github.com/m4thcreator/BSSTrades/tree/main/imageslibrary/services) — Night Bell.
+- [Bee Swarm Simulator Wiki](https://bee-swarm-simulator.fandom.com/wiki/Items) — wiki-hosted art for Honeysuckle, Coconut, Festive Bean and the Sideways Spirit Bear sticker where available.
 
-These are **third-party asset collections**, not official licensed redistribution channels. Items are generally protected by copyright even when shared by community projects; art ownership and permissions have not been independently confirmed. Images are linked from the upstream sources rather than copied into this repository. If an image is blocked or unavailable, the site uses its previous local illustration for that item. The site remains an independent, noncommercial fan project.
+Images first load through jsDelivr's asset-serving CDN. If a CDN image fails, the site retries the source repository's raw image URL, followed by a local illustration. A very wide 210×32 name-label image is automatically rejected rather than displayed as a tiny icon.
 
-Rewards with quantities (e.g. “3 Royal Jellies” and “200 Blueberries”) now normalize to the correct item artwork.
+**Fix from screenshot:** The previous source files from another repository were *210×32 text labels*, not square icons. These have been removed from the reward-artwork mappings.
+
+These are third-party asset collections and the art may be copyright-protected. The site is an independent fan tool; ownership and reuse permissions have not been independently verified. Icons are referenced by URL rather than redistributed as copies.
 
 ## Attribution and limits
 
-This is an independent fan-made project, **not** an official Fandom, Onett, Bee Swarm Simulator, or Roblox product. The interface is a custom implementation inspired by the community wiki's visual style; it is not a copy of Fandom's source or site branding. Wiki-hosted item images and the background remain the property of their rights holders and may fail to load if a redirect is unavailable or hotlinking is restricted. The local SVG fallback icons keep the tracker usable in those cases. Prices and rewards are reference data and may change in-game. The tracker cannot see hidden Roblox cards.
+This is an independent fan-made project, **not** an official Fandom, Onett, Bee Swarm Simulator, or Roblox product. The interface is a custom implementation inspired by the community wiki's visual style; it is not a copy of Fandom's source or site branding. Game item images and the wiki background belong to their respective rights holders. External image links can fail if an asset is removed or the host is blocked. The local SVG fallback icons keep the tracker usable in those cases. Prices and rewards are reference data and may change in-game. The tracker cannot see hidden Roblox cards.
