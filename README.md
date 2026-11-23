@@ -76,3 +76,16 @@ These are third-party asset collections and the art may be copyright-protected. 
 ## Attribution and limits
 
 This is an independent fan-made project, **not** an official Fandom, Onett, Bee Swarm Simulator, or Roblox product. The interface is a custom implementation inspired by the community wiki's visual style; it is not a copy of Fandom's source or site branding. Game item images and the wiki background belong to their respective rights holders. External image links can fail if an asset is removed or the host is blocked. The local SVG fallback icons keep the tracker usable in those cases. Prices and rewards are reference data and may change in-game. The tracker cannot see hidden Roblox cards.
+
+## In-game Memory Match board redesign
+
+The Memory Match board was remodeled using an in-game Extreme Memory Match screenshot as reference. The interactive board now features:
+
+- A large rounded golden panel with a centered **Memory Match** heading
+- Brown, rounded, initially blank tile faces
+- **Five columns and four rows** for Extreme and Winter; **four columns and four rows** for Regular, Mega, Night, and Spirit Bear
+- A left-side **Chances** panel showing base chances and three badge bonus indicators for each mode
+- Existing click-to-record, pair detection, undo, reset, and browser-local saving, unchanged
+
+The badge circles are original emoji approximations rather than extracted Roblox badge illustrations. The displayed chance count is the mode's **base** chance count, not a live counter from Roblox. All interactions remain manual.
+
